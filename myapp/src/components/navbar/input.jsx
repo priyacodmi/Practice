@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './navbar.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,16 +6,15 @@ import { useNavigate } from 'react-router-dom';
 export const SearchInput=()=>{
     const [text,setText]=useState("");
     const [searchMovie,setSearchMovie]=useState([]);
-    const inputRef = useRef();
     const navigte=useNavigate();
 
-    // function onKeyDown(event) {
-    //     localStorage.clear();
-    //     if(event.key=="Enter"){
-    //         navigte('/search');
-    //         localStorage.setItem("searchMovie", JSON.stringify(searchMovie));
-    //     }
-    //   }
+    function onKeyDown(event) {
+        localStorage.clear();
+        if(event.key=="Enter"){
+            navigte('/search');
+            localStorage.setItem("searchMovie", JSON.stringify(searchMovie));
+        }
+      }
 
     useEffect(() => {
         const getData = setTimeout(() => {
@@ -29,13 +28,13 @@ export const SearchInput=()=>{
         //return () => clearTimeout(getData);
     }, [text]);
 
-    // useEffect(()=>{
-    //     document.body.addEventListener('keypress', onKeyDown);
-    // },[searchMovie]);
+    useEffect(()=>{
+        document.body.addEventListener('keypress', onKeyDown);
+    },[searchMovie]);
 
     return(
         <div className='searchInput'>
-           <input type="search" onChange={(e)=>setText(e.target.value)} ref={inputRef} placeholder='Search your movie here...' />
+           <input type="search" onChange={(e)=>setText(e.target.value)}  placeholder='Search your movie here...' />
            <div className='searchedMovie'>
             {searchMovie?.map((el,ind)=>(
                 <div key={ind} className="movie">
