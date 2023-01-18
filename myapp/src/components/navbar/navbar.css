@@ -1,0 +1,68 @@
+.navContainer{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    background-color: thistle;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 0px;
+}
+.navContainer>ul{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+}
+
+.navContainer>ul>li{
+    list-style: none;
+}
+
+.link{
+    text-decoration: none;
+}
+
+
+/* ======================  Search Input Style =================== */
+
+.searchInput>input{
+    width: 28rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+}
+
+
+/* ===================  Searched Movie Container Style =================== */
+
+.searchedMovie{
+   width: 90%;
+   margin: auto;
+   margin-bottom: 0px;
+   z-index: 1;
+}
+
+.movie{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: .2rem;
+}
+
+.movie .imageDiv>img{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1rem;
+}
+
+.movie .moviename{
+    font-size: .8rem;
+}

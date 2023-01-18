@@ -1,0 +1,17 @@
+.movieContainer{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5rem;
+}
+
+.movieCard{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: .2rem;
+    height: 23rem;
+}
