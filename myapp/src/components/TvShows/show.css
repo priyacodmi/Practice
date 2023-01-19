@@ -61,11 +61,29 @@
     .movieContainer {
         grid-template-columns: repeat(1, 1fr);
     }
+    .detailDiv,.rating{
+       flex-direction: column;
+    }
+    .imageContainer{
+        width: 100%;
+    }
+    .showDetails{
+        width: 100%;
+    }
  }
 
 @media screen and (min-width: 412px) and (max-width: 575px) { 
     .movieContainer {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .detailDiv,.rating{
+        flex-direction: column;
+    }
+    .imageContainer{
+        width: 100%;
+    }
+    .showDetails{
+        width: 100%;
     }
 }
 
