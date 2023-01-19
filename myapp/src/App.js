@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Login } from './components/login/login';
 import { Navbar } from './components/navbar/Navbar';
+import { SignUp } from './components/signUp/signUp';
 import { FetchMovies } from './components/TvShows/Fetch';
 import { SearchedMovies } from './components/TvShows/searchMovie';
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<FetchMovies/>}/>
         <Route path="/search" element={<SearchedMovies/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<SignUp/>}/>
       </Routes>
     </div>
   );

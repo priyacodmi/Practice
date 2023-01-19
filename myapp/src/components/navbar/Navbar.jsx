@@ -9,7 +9,7 @@ export const Navbar = () => {
             <ul>
                 <li>
                     <span id='logoSection'>
-                        <Link to="/" className='link'><h2><i>Movie-App</i></h2></Link>
+                        <Link to="/" className='link'><h2><i>TV MAZE SHOW</i></h2></Link>
                     </span>
                 </li>
                 <li>
