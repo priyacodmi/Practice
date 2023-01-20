@@ -29,26 +29,21 @@ export const SearchInput = () => {
                 .then((response) => {
                     setSearchMovie(response.data);
                 });
-        }, 2000);
+        }, 1000);
 
-        //return () => clearTimeout(getData);
+        return () => clearTimeout(getData);
     }, [text]);
 
     return (
         <div className='searchInput'>
             <input type="search" onChange={(e) => setText(e.target.value)} id="input" onKeyPress={getShow} placeholder='Search your movie here...' />
-            {/* <div className='searchedMovie'>
+            <div className='searchedMovie'>
                 {searchMovie?.map((el, ind) => (
                     <div key={ind} className="movie">
-                        <div className='imageDiv'>
-                            <img src={el.show?.image?.medium} alt="moviepic" />
-                        </div>
-                        <div className='moviename'>
-                            {el.show?.name}
-                        </div>
+                        {el.show?.name}
                     </div>
                 ))}
-            </div> */}
+            </div>
         </div>
     )
 }

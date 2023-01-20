@@ -12,6 +12,7 @@
     display: flex;
     width: 90%;
     margin: auto;
+    height: 3rem;
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -27,6 +28,23 @@
     text-decoration: none;
 }
 
+.link>button{
+    font-size: 1.2rem;
+    padding: .5rem;
+    width: 6rem;
+    background-color: rgb(99, 32, 161);
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+.link:hover,.link>button:hover{
+    color: rgb(45, 115, 221);
+}
+
 
 /* ======================  Search Input Style =================== */
 
@@ -37,6 +55,8 @@
     padding: 1rem;
     border: none;
     outline: none;
+    position: sticky;
+    top:1rem;
     border-radius: .5rem;
 }
 
@@ -44,26 +64,21 @@
 /* ===================  Searched Movie Container Style =================== */
 
 .searchedMovie{
-   width: 90%;
-   margin: auto;
-   margin-bottom: 0px;
+   width: 100%;
    z-index: 1;
+   background-color: thistle;
+   padding: .5rem;
+   border-radius: .2rem;
 }
 
 .movie{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: .2rem;
+    font-size: 1rem;
+    text-align: left;
+    margin: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
-.movie .imageDiv>img{
-    height: 3rem;
-    width: 3rem;
-    border-radius: 1rem;
-}
-
-.movie .moviename{
-    font-size: .8rem;
+.movie:hover{
+    color: rgb(156, 102, 207);
 }
