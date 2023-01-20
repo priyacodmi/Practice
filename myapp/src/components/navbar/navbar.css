@@ -1,0 +1,84 @@
+.navContainer{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: thistle;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 0px;
+}
+.navContainer>ul{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+}
+
+.navContainer>ul>li{
+    list-style: none;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link>button{
+    font-size: 1.2rem;
+    padding: .5rem;
+    width: 6rem;
+    background-color: rgb(107, 50, 160);
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+.link:hover,.link>button:hover{
+    color: rgb(45, 115, 221);
+}
+
+
+/* ======================  Search Input Style =================== */
+
+.searchInput>input{
+    width: 28rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    position: sticky;
+    top:1rem;
+    border-radius: .5rem;
+}
+
+
+/* ===================  Searched Movie Container Style =================== */
+
+.searchedMovie{
+   width: 100%;
+   z-index: 1;
+   background-color: thistle;
+   padding: .5rem;
+   border-radius: .2rem;
+}
+
+.movie{
+    font-size: 1rem;
+    text-align: left;
+    margin: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.movie:hover{
+    color: rgb(156, 102, 207);
+}

@@ -1,0 +1,73 @@
+.container{
+    width: 40%;
+    margin: auto;
+    padding: 10rem;
+}
+
+.form{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgb(231, 210, 231);
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.form>h2{
+  color:rgb(134, 52, 134);
+}
+
+.form>div{
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.form>div>label,.form>div>input,.form>div>button{
+    width: 95%;
+    margin-bottom: .2rem;
+    font-size: 1.1rem;
+    padding: .4rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    color:rgb(134, 52, 134);
+}
+
+.form>div>button{
+    background-color: rgb(167, 105, 167);
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+/* ================ media query  =================== */
+@media screen and (min-width: 280px) and (max-width: 411px) {
+    .container{
+        width: 90%;
+    }
+ }
+
+@media screen and (min-width: 412px) and (max-width: 575px) { 
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1300px){ 
+    
+ }
+

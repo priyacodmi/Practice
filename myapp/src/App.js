@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import { Footer } from './components/footer/footer';
+import { Login } from './components/login/login';
+import { Navbar } from './components/navbar/Navbar';
+import { SignUp } from './components/signUp/signUp';
+import { FetchMovies } from './components/TvShows/Fetch';
+import { SearchedMovies } from './components/TvShows/searchMovie';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer/>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<FetchMovies/>}/>
+        <Route path="/search" element={<SearchedMovies/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<SignUp/>}/>
+      </Routes>
+      <Footer/>
     </div>
   );
 }

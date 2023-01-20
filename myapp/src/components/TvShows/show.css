@@ -1,0 +1,126 @@
+.movieContainer{
+    width: 95%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.movieContainer h2{
+    color:rgb(194, 71, 194);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+ }
+
+.comedyMovieContainer, .dramaMovieContainer,.crimeMovieContainer,.romanceMovieContainer {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.movieCard {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: .2rem;
+    height: 23rem;
+    background-color: thistle;
+    cursor: pointer;
+}
+
+
+/* ================== search show container styling ================== */
+.checked{
+    color: rgb(206, 192, 6);
+}
+.searchShowContainer{
+    width: 100%;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.detailDiv{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    padding: 5rem;
+    background-color: thistle;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.imageContainer{
+    width: 25%;
+}
+
+.imageContainer>img{
+    width: 100%;
+}
+.showDetails{
+    width: 50%;
+}
+
+.showDetails>div{
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ================ media query  =================== */
+@media screen and (min-width: 280px) and (max-width: 411px) {
+    .movieContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .detailDiv,.rating{
+       flex-direction: column;
+    }
+    .imageContainer{
+        width: 100%;
+    }
+    .showDetails{
+        width: 100%;
+    }
+ }
+
+@media screen and (min-width: 412px) and (max-width: 575px) { 
+    .movieContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detailDiv,.rating{
+        flex-direction: column;
+    }
+    .imageContainer{
+        width: 100%;
+    }
+    .showDetails{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+    .movieContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+    .movieContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1300px){ 
+    .movieContainer {
+        grid-template-columns: repeat(6, 1fr);
+    }
+ }
+
