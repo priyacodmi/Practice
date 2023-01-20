@@ -16,7 +16,7 @@ export const Navbar = () => {
                     <SearchInput/>
                 </li>
                 <li>
-                    <Link to="/login" className='link'>Login</Link>
+                    <Link to="/login" className='link'><h4>Login</h4></Link>
                 </li>
             </ul>
         </nav>

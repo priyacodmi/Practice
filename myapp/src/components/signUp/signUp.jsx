@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../login/login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 export const SignUp = () => {
+    const navigate=useNavigate();
     const initialState={
         username:"",
         email:"",
@@ -22,6 +24,7 @@ export const SignUp = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log('register');
+        navigate('/login');
     }
     return (
         <div className='container'>

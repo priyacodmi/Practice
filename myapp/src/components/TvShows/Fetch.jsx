@@ -4,69 +4,104 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from "swiper";
 import './show.css';
+import { Card } from './Card';
 
-export const FetchMovies=()=>{
-    const [movies,setMovies]=useState([]);
-    const [loading,setLoading]=useState(true);
-    var [comedyList,setComedyList]=useState([]);
-    var [crimeList,setCrimeList]=useState([]);
-    var [dramaList,setDramaList]=useState([]);
+SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
+export const FetchMovies = () => {
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [comedyList, setComedyList] = useState([]);
+    const [crimeList, setCrimeList] = useState([]);
+    const [dramaList, setDramaList] = useState([]);
+    const [romanceList, setRomanceList] = useState([]);
 
-    const getAllMovies=async()=>{
-            try {
-                const res= await axios.get(`https://api.tvmaze.com/shows?page=1`);
-                const moviesList=res.data;
-                //console.log(moviesList);
-                moviesList.map((movie)=>{
-                    if(movie.genres.includes("Crime")){
-                        setCrimeList(...crimeList,movie);
-                    }
-                });
+    const getAllMovies = async () => {
+        try {
+            const res = await axios.get(`https://api.tvmaze.com/shows?page=1`);
+            const moviesList = res.data;
+            //console.log(moviesList);
+            let arr1 = moviesList.filter((movie) => {
+                if (movie.genres.includes("Crime")) {
+                    return movie;
+                }
+            });
+            setCrimeList(arr1);
+            let arr2 = moviesList.filter((movie) => {
+                if (movie.genres.includes("Comedy")) {
+                    return movie;
+                }
+            });
+            setComedyList(arr2);
+            let arr3 = moviesList.filter((movie) => {
+                if (movie.genres.includes("Drama")) {
+                    return movie;
+                }
+            });
+            setDramaList(arr3);
 
-                moviesList.map((movie)=>{
-                    if(movie.genres.includes("Comedy")){
-                        setComedyList([...comedyList,movie]);
-                    }
-                });
+            let arr4 = moviesList.filter((movie) => {
+                if (movie.genres.includes("Romance")) {
+                    return movie;
+                }
+            });
+            setRomanceList(arr4);
 
-                moviesList.map((movie)=>{
-                    if(movie.genres.includes("Drama")){
-                        setDramaList([...dramaList,movie]);
-                    }
-                });
-
-                setMovies(moviesList);
-                setLoading(false);
-            } catch (error) {
-                console.log("error",error);
-            }
+            setMovies(moviesList);
+            setLoading(false);
+        } catch (error) {
+            console.log("error", error);
+        }
     }
 
-    console.log(comedyList)
-    console.log(crimeList)
-    console.log(dramaList)
-
-    useEffect(()=>{
+    useEffect(() => {
         getAllMovies();
-    },[]);
+    }, []);
 
-    return(
-      <div className='movieContainer'>
-        {
-            movies?.map((movie,ind)=>(
-                <div className='movieCard' key={ind}>
-                    <div>
-                        <img src={movie.image.medium} alt="moviepic" />
-                    </div>
-                    <div>
-                        <p>Langauge : {movie.language}</p>
-                        <p>Show Name : {movie.name}</p>
-                    </div>
+    return (
+        <>
+            <div className='movieContainer'>
+
+                <h2>Comedy Shows</h2>
+                <div className='comedyMovieContainer'>
+                    {
+                        comedyList?.map((movie, ind) => (
+                            <Card movie={movie} key={ind}/>
+                        ))
+                    }
                 </div>
-            ))
-        }
-      </div>
+            </div>
+            <div className='movieContainer'>
+                <h2>Drama Shows</h2>
+                <div className='dramaMovieContainer'>
+                    {
+                        dramaList?.map((movie, ind) => (
+                            <Card movie={movie} key={ind}/>
+                        ))
+                    }
+                </div>
+            </div>
+            <div className='movieContainer'>
+                <h2>Crime Shows</h2>
+                <div className='crimeMovieContainer'>
+                    {
+                        crimeList?.map((movie, ind) => (
+                            <Card movie={movie} key={ind}/>
+                        ))
+                    }
+                </div>
+            </div>
+            <div className='movieContainer'>
+                <h2>Romance Shows</h2>
+                <div className='romanceMovieContainer'>
+                    {
+                        romanceList?.map((movie, ind) => (
+                            <Card movie={movie} key={ind}/>
+                        ))
+                    }
+                </div>
+            </div>
+        </>
     )
 }

@@ -1,19 +1,33 @@
-.movieContainer {
+.movieContainer{
     width: 95%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.movieContainer h2{
+    color:rgb(194, 71, 194);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+ }
+
+.comedyMovieContainer, .dramaMovieContainer,.crimeMovieContainer,.romanceMovieContainer {
+    width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 2rem;
+    margin-bottom: 4rem;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 3rem;
 }
 
 .movieCard {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: .2rem;
     height: 23rem;
+    background-color: thistle;
+    cursor: pointer;
 }
 
 

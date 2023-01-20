@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import { Footer } from './components/footer/footer';
 import { Login } from './components/login/login';
 import { Navbar } from './components/navbar/Navbar';
 import { SignUp } from './components/signUp/signUp';
@@ -9,6 +11,7 @@ import { SearchedMovies } from './components/TvShows/searchMovie';
 function App() {
   return (
     <div className="App">
+      <ToastContainer/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<FetchMovies/>}/>
@@ -16,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<SignUp/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
